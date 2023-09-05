@@ -1,0 +1,4 @@
+{
+    "nuxt.isNuxtApp": true,
+    "vue.codeActions.enabled": false
+}
