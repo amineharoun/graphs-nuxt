@@ -86,7 +86,6 @@ export default {
     this.graph.relations.forEach((r) => {
       this.generateCoordinate(r.id);
     });
-
     if (this.editable) {
       interact(".draggable").draggable({
         // enable inertial throwing
@@ -193,6 +192,10 @@ export default {
         (e) => e.start != id && e.end != id
       );
     },
+  },
+
+  beforeDestroy() {
+    interact(".draggable").unset();
   },
 };
 </script>
