@@ -37,6 +37,9 @@
     />
 
     <nodeDialog v-model="nodeDialog" @addNode="addNode" :nodes="graph.nodes" />
+    <v-snackbar color="success" v-model="snackbar" :timeout="timeout">
+      Graphe sauvegardé avec succès !
+    </v-snackbar>
   </v-container>
 </template>
 
@@ -49,6 +52,8 @@ export default {
   },
   data() {
     return {
+      snackbar: false,
+      timeout: 3000,
       relationDialog: false,
       nodeDialog: false,
       graph: {
@@ -101,6 +106,8 @@ export default {
           localStorage.setItem("graphs", JSON.stringify(graphesLocalStorage));
         }
       });
+
+      this.snackbar = true;
     },
   },
 };

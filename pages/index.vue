@@ -136,7 +136,6 @@ export default {
         description: null,
         created_at: null,
         updated_at: null,
-        new: true,
       },
     };
   },
