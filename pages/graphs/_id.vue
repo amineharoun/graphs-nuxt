@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <AppBar returnBtn>
-      <v-toolbar-title>Vue du Graphe #{{ $route.params.id }}</v-toolbar-title>
+      <v-toolbar-title>Vue du Graphe</v-toolbar-title>
       <v-spacer />
       <v-btn
         outlined
@@ -26,7 +26,7 @@
 export default {
   head() {
     return {
-      title: "Vue du graphe " + this.$route.params.id,
+      title: "Vue du graphe",
     };
   },
   data() {

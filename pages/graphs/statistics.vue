@@ -1,9 +1,7 @@
 <template>
   <v-container>
     <AppBar returnBtn>
-      <v-toolbar-title
-        >Statistiques du graphe #{{ $route.params.id }}</v-toolbar-title
-      >
+      <v-toolbar-title>Statistiques du graphe</v-toolbar-title>
       <v-spacer />
 
       <v-btn
@@ -37,7 +35,7 @@
 export default {
   head() {
     return {
-      title: "Statistiques du graphe " + this.$route.params.id,
+      title: "Statistiques du graphe",
     };
   },
   data() {
