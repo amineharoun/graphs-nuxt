@@ -1,9 +1,6 @@
 <template>
   <v-container>
-    <v-app-bar flat fixed app>
-      <v-btn depressed small fab to="/" class="mr-4"
-        ><v-icon>mdi-arrow-left</v-icon></v-btn
-      >
+    <AppBar returnBtn>
       <v-toolbar-title>Vue du Graphe #{{ $route.params.id }}</v-toolbar-title>
       <v-spacer />
       <v-btn
@@ -19,7 +16,7 @@
         :to="{ name: 'graph-stats', params: { id: $route.params.id } }"
         ><v-icon left>mdi-chart-bar</v-icon> Voir les stats</v-btn
       >
-    </v-app-bar>
+    </AppBar>
 
     <GraphView v-model="graph" :id="$route.params.id" />
   </v-container>

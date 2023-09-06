@@ -1,18 +1,17 @@
 <template>
   <v-container>
-    <v-app-bar flat fixed app>
-      <v-btn
-        depressed
-        small
-        fab
-        :to="`/graphs/${$route.params.id}`"
-        class="mr-4"
-        ><v-icon>mdi-arrow-left</v-icon></v-btn
-      >
+    <AppBar returnBtn>
       <v-toolbar-title
         >Edition du graphe #{{ $route.params.id }}</v-toolbar-title
       >
       <v-spacer />
+      <v-btn
+        class="mr-4"
+        outlined
+        color="blue"
+        :to="{ name: 'graph-stats', params: { id: $route.params.id } }"
+        ><v-icon left>mdi-chart-bar</v-icon> Voir les stats</v-btn
+      >
       <v-btn outlined color="blue" @click="nodeDialog = true" class="mr-4"
         ><v-icon left>mdi-plus</v-icon> Ajouter un noeud</v-btn
       >
@@ -23,7 +22,7 @@
       <v-btn outlined color="green" @click="save"
         ><v-icon left>mdi-content-save-check</v-icon> Enregistrer</v-btn
       >
-    </v-app-bar>
+    </AppBar>
 
     <GraphView
       editable

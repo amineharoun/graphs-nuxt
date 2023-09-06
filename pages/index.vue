@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-app-bar flat fixed app>
+    <AppBar>
       <v-toolbar-title>Liste des graphes</v-toolbar-title>
       <v-spacer />
       <v-btn outlined color="blue" to="/fillDatas" class="mr-4"
@@ -9,7 +9,7 @@
       <v-btn outlined color="blue" @click="addGraph"
         ><v-icon left>mdi-plus</v-icon> Ajouter un graphe</v-btn
       >
-    </v-app-bar>
+    </AppBar>
     <v-data-table
       :headers="headers"
       :items="items"
@@ -54,6 +54,32 @@
               <v-icon>mdi-pencil</v-icon>
             </v-btn> </template
           ><span>Editer</span>
+        </v-tooltip>
+
+        <v-tooltip bottom>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+              v-bind="attrs"
+              v-on="on"
+              color="blue"
+              icon
+              :to="`/graphs/${item.id}/edit`"
+              ><v-icon>mdi-graph-outline</v-icon></v-btn
+            ></template
+          ><span>Editer les noeuds</span>
+        </v-tooltip>
+
+        <v-tooltip bottom>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+              v-bind="attrs"
+              v-on="on"
+              color="blue"
+              icon
+              :to="`/graphs/${item.id}/statistics`"
+              ><v-icon>mdi-chart-bar</v-icon></v-btn
+            ></template
+          ><span>Statistiques</span>
         </v-tooltip>
 
         <v-tooltip bottom>

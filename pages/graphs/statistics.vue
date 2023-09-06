@@ -1,14 +1,6 @@
 <template>
   <v-container>
-    <v-app-bar flat fixed app>
-      <v-btn
-        depressed
-        small
-        fab
-        :to="`/graphs/${$route.params.id}`"
-        class="mr-4"
-        ><v-icon>mdi-arrow-left</v-icon></v-btn
-      >
+    <AppBar returnBtn>
       <v-toolbar-title
         >Statistiques du graphe #{{ $route.params.id }}</v-toolbar-title
       >
@@ -20,7 +12,7 @@
         :to="{ name: 'graph-edit', params: { id: $route.params.id } }"
         ><v-icon left>mdi-pencil</v-icon> Editer le graphe</v-btn
       >
-    </v-app-bar>
+    </AppBar>
 
     <v-data-table
       :headers="headers"
@@ -66,7 +58,7 @@ export default {
       : [];
     let currentGraph = graphsParsed.find((e) => e.id == this.$route.params.id);
 
-    currentGraph.nodes.forEach((node) => {
+    currentGraph.nodes?.forEach((node) => {
       let neighbors = [];
       currentGraph.relations.forEach((r) => {
         if (r.start == node.id) {

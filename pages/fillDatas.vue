@@ -1,12 +1,9 @@
 <template>
   <v-container>
-    <v-app-bar fixed app>
-      <v-btn depressed small fab to="/" class="mr-4"
-        ><v-icon>mdi-arrow-left</v-icon></v-btn
-      >
+    <AppBar returnBtn>
       <v-toolbar-title>Remplissage dans local storage</v-toolbar-title>
       <v-spacer />
-    </v-app-bar>
+    </AppBar>
 
     <div>Cette page est dédiée à remplir votre local storage de graphes</div>
   </v-container>
