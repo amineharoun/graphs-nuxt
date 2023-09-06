@@ -164,16 +164,14 @@ export default {
         const endX = endNode.left;
         const endY = endNode.top;
 
-        // Calculez la longueur de la ligne
+        // calculate line width
         const length = Math.sqrt((endX - startX) ** 2 + (endY - startY) ** 2);
 
-        // Calculez l'angle de la ligne
+        // calculate line rotation angle
         const angle = Math.atan2(endY - startY, endX - startX);
 
-        // Récupérez l'élément de ligne
         const lineElement = document.getElementById("line" + id);
 
-        // Appliquez les propriétés CSS pour la ligne
         lineElement.style.left = startX + "px";
         lineElement.style.top = startY + "px";
         lineElement.style.width = length + "px";
